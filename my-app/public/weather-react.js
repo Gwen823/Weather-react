@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import formatDate from "./formatDate";
 import axios from "axios";
-import "./index.css";
+import "./Weather.css";
 
 export default function WeatherReact() {
  
@@ -47,7 +48,7 @@ export default function WeatherReact() {
           <li> Humidity {weather.humidity}(%) </li>
           <li> Wind {Math.round(weather.wind)}(Km/h):</li>
           <li>
-            {" "}
+    
             <img src={weather.icon} alt="Weather Icon" />{" "}
           </li>
         </ul>
@@ -55,13 +56,28 @@ export default function WeatherReact() {
     <h1>New York </h1>
     <ul>
         <li>
-           <formatDate date= {weatherDate.date}/>
+           <formatDate date={weatherDate.date}/>
         </li>
         <li>sunny</li>
     </ul>
 <div className="row">
 <div className="col-6">
-
+    <div className="row">
+        <div className="clearfix"> 
+<img src="" alt="" className="float-left"/>
+<div className="float-left">
+    <span className="temperature"><span/>
+    <span className="unit"><span/>
+    <div/>
+<div/>
+<div/>
+<div className="col-6">
+    <ul>
+        <li>
+            
+            <li/>
+        <ul/>
+<div/>
 </div>
 </div>
 </div>

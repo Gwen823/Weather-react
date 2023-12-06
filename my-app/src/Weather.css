@@ -1,0 +1,29 @@
+.weather li{
+    font: size 16px;
+    font-weight: 100;
+    line-height: 19px;
+    list-style: none;
+}
+
+.weather img{ height: 64px;
+    width: 64px;
+    margin-right: 10px;
+    display: inline-block;
+
+}
+.weather .temperature{
+    font-weight: bold;
+    color:rgb(33,33,33);
+    font-size: 64px;
+    font-weight: 400px;
+}
+.weather .unit { color: rgb(33,33,33);
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    line-height: 1;
+    top: -34px;
+    margin-left: 5px;
+
+
+}
