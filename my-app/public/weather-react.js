@@ -40,24 +40,25 @@ export default function WeatherReact() {
 
   if (loaded) {
     return (
-      <div>
-        {form}
-        <ul>
-          <li>Temperature {Math.round(weather.temperature)} C</li>
-          <li>Description:{weather.desciption}</li>
-          <li> Humidity {weather.humidity}(%) </li>
-          <li> Wind {Math.round(weather.wind)}(Km/h):</li>
-          <li>
-    
-            <img src={weather.icon} alt="Weather Icon" />{" "}
-          </li>
-        </ul>
-        <div className="Weather">
+                <div className="Weather">  
+<form>
+    <div className="row"> 
+    <div className="col-9">
+    <input type="search" placeholder="Enter a city" className="form-contol"/>  
+    </div>
+    <div className="col-3">
+<input type="submit" value="search" className="btn btn-primary"/> 
+</div>
+</div>
+</form>
+
+
     <h1>New York </h1>
     <ul>
         <li>
            <formatDate date={weatherDate.date}/>
         </li>
+        <img src={weather.icon} alt="Weather Icon" />
         <li>sunny</li>
     </ul>
 <div className="row">
@@ -66,18 +67,25 @@ export default function WeatherReact() {
         <div className="clearfix"> 
 <img src="" alt="" className="float-left"/>
 <div className="float-left">
-    <span className="temperature"><span/>
+    <span className="temperature">Temperature {Math.round(weather.temperature)} C<span/>
     <span className="unit"><span/>
     <div/>
-<div/>
-<div/>
+
 <div className="col-6">
-    <ul>
-        <li>
+<ul>
+    
+          <li>Description:{weather.desciption}</li>
+          <li> Humidity {weather.humidity}(%) </li>
+          <li> Wind {Math.round(weather.wind)}(Km/h):</li>
+          <li>
+    
             
-            <li/>
-        <ul/>
+          </li>
+        </ul>
 <div/>
+</div>
+      </div>
+      <div/>
 </div>
 </div>
 </div>
