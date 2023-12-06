@@ -12,7 +12,7 @@ root.render(
     <div className="App">
       <div className="container">
       <h1>React Weather App</h1>
-      <WeatherReact />
+      <WeatherReact defaultCity="New York" />
     
     <div>
       <ul></ul>

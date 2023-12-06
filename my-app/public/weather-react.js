@@ -4,13 +4,14 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function WeatherReact() {
-    const [loaded, setLoaded] = useState("false");
-    const[watherData,setWeatherData]=useState({});
+   
+    const[watherData,setWeatherData]=useState({ready:false});
 
 }
 function handleResponse(response){
     setWeather({
-        cit: response.data.main,
+        ready: true,
+        city: response.data.main,
         temperature: response.data.main.temp,
         description: response.data.weather[0].description,
         wind: response.data.wind.speed,
@@ -20,7 +21,7 @@ function handleResponse(response){
     setLoaded(true);
 }
 
-  if (loaded) {
+  if (weatherData.ready) {
     return (
 <div className="Weather">  
 <form>
@@ -39,7 +40,7 @@ function handleResponse(response){
            <formatDate date={weatherDate.date}/>
         </li>
         <img src={weatherData.icon} alt="Weather Icon" />
-        <li>sunny</li>
+        <li>{weatherData.description}</li>
     </ul>
 <div className="row">
 <div className="col-6">
@@ -54,7 +55,7 @@ function handleResponse(response){
 <div className="col-6">
 <ul>
 
-          <li>Description:{weatherData.desciption}</li>
+          <li className="text-capitalized">Description:{weatherData.desciption}</li>
           <li> Humidity {weatherData.humidity}(%) </li>
           <li> Wind {Math.round(weatherData.wind)}(Km/h):</li>
           <li>
@@ -72,9 +73,8 @@ function handleResponse(response){
       </div>
     );
   } else {
-    const apiKey=`bb0df6985c2eab6a171d64a6bacbb4e1`;
-    let city="New York";
-    const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey="bb0df6985c2eab6a171d64a6bacbb4e1";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
     return"loading..."
   }
