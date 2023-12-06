@@ -24,8 +24,7 @@ return(
   className="float-left"
   />
 <div className="float-left">
-<span className="temperature">Temperature {Math.round(weather.temperature)}</span> 
-<span className="unit">C</span>
+    <WeatherTemperature celcius={props.data.temperature}/>
 </div>
 </div>
 </div>
