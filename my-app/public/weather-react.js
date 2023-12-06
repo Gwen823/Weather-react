@@ -3,9 +3,11 @@ import axios from "axios";
 import "./index.css";
 
 export default function WeatherReact() {
+ 
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState("false");
   const [weather, setWeather] = useState({});
+
 
   function displayWeather(response) {
     setLoaded(true);
@@ -49,6 +51,20 @@ export default function WeatherReact() {
             <img src={weather.icon} alt="Weather Icon" />{" "}
           </li>
         </ul>
+        <div className="Weather">
+    <h1>New York </h1>
+    <ul>
+        <li>
+           <formatDate date= {weatherDate.date}/>
+        </li>
+        <li>sunny</li>
+    </ul>
+<div className="row">
+<div className="col-6">
+
+</div>
+</div>
+</div>
       </div>
     );
   } else {
