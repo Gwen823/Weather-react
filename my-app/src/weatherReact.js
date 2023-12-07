@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import weatherInfo from "./weatherInfo";
+import WeatherTemperature  from "./WeatherTemperature";
+import WeatherTemperature  from "./WeatherTemperature";
+import WeatherForecast from "WeatherForecast";
 import weatherInfo from "./weatherInfo";
-import WeatherTemperature  from "./WeatherTemperature";
-import WeatherTemperature  from "./WeatherTemperature";
 import axios from "axios";
 import "./Weather.css";
 
@@ -13,6 +14,7 @@ function handleResponse(response){
     setWeather({
         ready: true,
         city: response.data.main,
+        coord:response.data.coord,
         date:new Date (response.data.dt*100),
         temperature: response.data.main.temp,
         description: response.data.weather[0].description,
@@ -59,6 +61,7 @@ className="btn btn-primary w-100"/>
 </div>
 </form>
 <WeatherInfo data={weatherData}/>
+<WeatherForecast coord={weatherData.coord} icon={weatherData.icon}/>
 </div>
     );
 

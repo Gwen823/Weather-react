@@ -18,7 +18,7 @@ function Fahrenheit (){
 if(unit === "celcius"){
  return (<div className="WeatherTemperature">
  <span className="temperature">Temperature {Math.round(props.celcius)}</span> 
- <span className="unit"> C | {""} <a href="/" onClick={showFahrenheit}> F <a/></span> | <span className="unit"></span>
+ <span className="unit"> C | {""} <a href="/" onClick={showFahrenheit}> F <a/> </span> | <span className="unit"></span>
  
  </div>
  );
