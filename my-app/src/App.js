@@ -17,7 +17,7 @@ root.render(
     <div>
       <ul></ul>
     </div>
-    <footer>coded by Johana Abreu <a href="https://github.com/Gwen823/Weather-react.git" target="_blank">open source Github</a></footer>
+    <footer>coded by Johana Abreu <a href="https://github.com/Gwen823/Weather-react.git" target="_blank" rel="noopener noreferrer">open source Github</a></footer>
     </div>
     </div>
   </StrictMode>
