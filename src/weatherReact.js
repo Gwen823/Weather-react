@@ -5,12 +5,13 @@ import axios from "axios";
 import "./Weather.css";
 
 
+
 export default function WeatherReact() {
- const[watherData,setWeatherData]=useState({ready:false});
+ const[WeatherData,setWeatherData]=useState({ready:false});
  const[city,setCity]=useState(props.defaultCity);
 function handleResponse(response)
 {
-    setWeather({
+    setWeatherData({
         ready: true,
         city: response.data.main,
         coord:response.data.coord,

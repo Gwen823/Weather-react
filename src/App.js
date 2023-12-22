@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from './App.js';
+import WeatherReact from "./WeatherReact";
+
 import "./index.css";
-import WeatherReact from "./weatherReact";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -12,7 +12,7 @@ root.render(
     <div className="App">
       <div className="container">
       <h1>React Weather App</h1>
-      <WeatherReact defaultCity="New York" />
+      <WeatherReact defaultCity="New York"/>
     
     <div>
       <ul></ul>
