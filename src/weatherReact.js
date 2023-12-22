@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import weatherInfo from "./weatherInfo";
-import WeatherTemperature  from "./WeatherTemperature";
-import WeatherTemperature  from "./WeatherTemperature";
-import WeatherForecast from "WeatherForecast";
-import weatherInfo from "./weatherInfo";
+import WeatherForecast from "./WeatherForecast";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
+
 export default function WeatherReact() {
  const[watherData,setWeatherData]=useState({ready:false});
- const[city,setCity]=useState(props.defaultCity)
-function handleResponse(response){
+ const[city,setCity]=useState(props.defaultCity);
+function handleResponse(response)
+{
     setWeather({
         ready: true,
         city: response.data.main,
@@ -20,8 +19,9 @@ function handleResponse(response){
         description: response.data.weather[0].description,
         wind: response.data.wind.speed,
         humidity: response.data.main.humidity,
-        icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-      };
+        icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+        );
+
     setLoaded(true);
 }
 
@@ -39,7 +39,7 @@ function handleCityChange(event){
   setCity(event.target.value);
   search(city);
 }
-  if (weatherData.ready) {
+  if (WeatherData.ready) {
     return (
 <div className="Weather">  
 <form onSubmit={handleSubmit}>
@@ -60,8 +60,9 @@ className="btn btn-primary w-100"/>
 </div>
 </div>
 </form>
-<WeatherInfo data={weatherData}/>
-<WeatherForecast coord={weatherData.coord} icon={weatherData.icon}/>
+<WeatherInfo data={WeatherData}/>
+<WeatherForecast coord={WeatherData.coord} icon={WeatherData.icon}/>
+
 </div>
     );
 
