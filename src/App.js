@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import WeatherReact from "./WeatherReact";
+
+
 
 import "./index.css";
 
@@ -12,8 +13,9 @@ root.render(
     <div className="App">
       <div className="container">
       <h1>React Weather App</h1>
+      <div>
       <WeatherReact defaultCity="New York"/>
-    
+      </div>
     <div>
       <ul></ul>
     </div>
