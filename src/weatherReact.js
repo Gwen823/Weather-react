@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import WeatherForecast from "./WeatherForecast";
-import WeatherInfo from "./weatherInfo";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function WeatherReact(props) {
   const [city, setCity] = useState(props.defaultCity);
-  const [weatherData, setWeather] = useState({ ready: false });
+  const [WeatherData, setWeather] = useState({ ready: false });
 
   function handleResponse(response) {
     setWeather({
@@ -35,7 +35,7 @@ export default function WeatherReact(props) {
     setCity(event.target.value);
     search(city);
   }
-  if (weatherData.ready) {
+  if (WeatherData.ready) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -58,8 +58,8 @@ export default function WeatherReact(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData} />
-        <WeatherForecast coord={weatherData.coord} icon={weatherData.icon} />
+        <WeatherInfo data={WeatherData} />
+        <WeatherForecast coord={WeatherData.coord} icon={WeatherData.icon} />
       </div>
     );
   } else {
