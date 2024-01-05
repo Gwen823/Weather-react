@@ -1,4 +1,4 @@
-import WeatherReact from "./WeatherReact";
+import WeatherReact from "./weatherReact";
 
 export default function App() {
   return (
